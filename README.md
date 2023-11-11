@@ -1,118 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
+# GeeksForGeeks Solutions
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            background-color: #f5f5f5;
-            color: #333;
-            margin: 20px;
-        }
+Welcome to my GeeksForGeeks solutions repository!
 
-        header {
-            background-color: #28a745;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
+## Table of Contents
+- [Introduction](#introduction)
+- [Languages](#languages)
+- [Directory Structure](#directory-structure)
+- [How to Contribute](#how-to-contribute)
+- [Connect with Me](#connect-with-me)
 
-        h1 {
-            color: #28a745;
-        }
+## Introduction
+This repository contains my solutions to GeeksForGeeks problems. I regularly update it with new solutions as I work through the challenges. Feel free to explore and use the code for your reference.
 
-        a {
-            color: #28a745;
-            text-decoration: none;
-            font-weight: bold;
-        }
+## Languages
+- Python
+- C++ (Learning in Progress)
 
-        a:hover {
-            text-decoration: underline;
-        }
+## Directory Structure
+Each directory corresponds to a specific GeeksForGeeks problem. Inside each directory, you'll find the solution file(s) along with any additional resources or explanations.
 
-        section {
-            margin-top: 20px;
-        }
+## How to Contribute
+If you have a better solution or want to add explanations to existing ones, feel free to contribute! Here's how you can do it:
+1. Fork the repository.
+2. Create a new branch for your feature: `git checkout -b feature/new-solution`.
+3. Commit your changes: `git commit -m 'Added a new solution for Problem X'`.
+4. Push to the branch: `git push origin feature/new-solution`.
+5. Submit a pull request.
 
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
+## Connect with Me
+Let's connect! Feel free to reach out on [LinkedIn](https://www.linkedin.com/in/codewithrishav/). I'm open to discussions, collaborations, or just a friendly chat about coding and technology.
 
-        li {
-            margin-bottom: 10px;
-        }
-
-        footer {
-            margin-top: 20px;
-            text-align: center;
-            color: #555;
-        }
-    </style>
-    <title>GeeksForGeeks Solutions</title>
-</head>
-
-<body>
-    <header>
-        <h1>GeeksForGeeks Solutions</h1>
-        <p>Welcome to my GeeksForGeeks solutions repository!</p>
-    </header>
-
-    <section>
-        <h2>Table of Contents</h2>
-        <ul>
-            <li><a href="#introduction">Introduction</a></li>
-            <li><a href="#languages">Languages</a></li>
-            <li><a href="#directory-structure">Directory Structure</a></li>
-            <li><a href="#how-to-contribute">How to Contribute</a></li>
-            <li><a href="#connect-with-me">Connect with Me</a></li>
-        </ul>
-    </section>
-
-    <section id="introduction">
-        <h2>Introduction</h2>
-        <p>This repository contains my solutions to GeeksForGeeks problems. I regularly update it with new solutions as I work through the challenges. Feel free to explore and use the code for your reference.</p>
-    </section>
-
-    <section id="languages">
-        <h2>Languages</h2>
-        <p>
-            <ul>
-                <li>Python</li>
-                <li>C++ (Learning in Progress)</li>
-            </ul>
-        </p>
-    </section>
-
-    <section id="directory-structure">
-        <h2>Directory Structure</h2>
-        <p>Each directory corresponds to a specific GeeksForGeeks problem. Inside each directory, you'll find the solution file(s) along with any additional resources or explanations.</p>
-    </section>
-
-    <section id="how-to-contribute">
-        <h2>How to Contribute</h2>
-        <p>If you have a better solution or want to add explanations to existing ones, feel free to contribute! Here's how you can do it:</p>
-        <ol>
-            <li>Fork the repository.</li>
-            <li>Create a new branch for your feature: <code>git checkout -b feature/new-solution</code>.</li>
-            <li>Commit your changes: <code>git commit -m 'Added a new solution for Problem X'</code>.</li>
-            <li>Push to the branch: <code>git push origin feature/new-solution</code>.</li>
-            <li>Submit a pull request.</li>
-        </ol>
-    </section>
-
-    <section id="connect-with-me">
-        <h2>Connect with Me</h2>
-        <p>Let's connect! Feel free to reach out on <a href="https://www.linkedin.com/in/codewithrishav/" target="_blank">LinkedIn</a>. I'm open to discussions, collaborations, or just a friendly chat about coding and technology.</p>
-    </section>
-
-    <footer>
-        <p>Happy Coding! 🚀</p>
-    </footer>
-</body>
-
-</html>
+Happy Coding! 🚀
