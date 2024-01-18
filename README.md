@@ -1,6 +1,6 @@
 # GeeksForGeeks Solutions
 
-Welcome to my GeeksForGeeks solutions repository!
+Welcome to my GeeksForGeeks solutions repository! Here you can find the answers to POTD of the gfg web portal
 
 ## Table of Contents
 - [Introduction](#introduction)
