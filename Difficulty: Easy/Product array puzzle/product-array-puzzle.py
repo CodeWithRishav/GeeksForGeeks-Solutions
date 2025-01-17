@@ -1,34 +1,30 @@
 #User function Template for python3
 
 class Solution:
-    def productExceptSelf(self, nums):
-        #code here
-        c0 = nums.count(0)
-        if (c0 == 1):
-            p = 1
-            for i in nums:
-                if i != 0:
-                    p = p*i
-            for i in range(len(nums)):
-                if nums[i] != 0:
-                    nums[i] = 0
-                else:
-                    nums[i] = p
-            return nums
-        elif c0==len(nums):
-            return nums
-        elif c0>1:
-            for i in range(len(nums)):
-                nums[i] = 0
-            return nums
-        else:
-            p = 1
-            for i in nums:
-                p = p*i
-            for i in range(len(nums)):
-                nums[i] = p//nums[i]
-            return nums
 
+    def productExceptSelf(self, arr):
+        n = len(arr)
+
+        product = 1
+        zeroCount = 0
+
+        # Calculate the total product of all elements and count zeros
+        for num in arr:
+            if num == 0:
+                zeroCount += 1
+            else:
+                product *= num
+
+        # Case 1: If there are more than one zero, return an array of zeros
+        if zeroCount > 1:
+            return [0] * n  # All zeros
+
+        # Case 2: If there is exactly one zero, set the product at that index
+        if zeroCount == 1:
+            return [product if num == 0 else 0 for num in arr]
+
+        # Case 3: If there are no zeros, calculate product except self
+        return [product // num for num in arr]  # List comprehension
 
 #{ 
  # Driver Code Starts
@@ -38,10 +34,11 @@ if __name__ == '__main__':
     t = int(input())
 
     for _ in range(t):
-        n = int(input())
+
         arr = [int(x) for x in input().split()]
 
         ans = Solution().productExceptSelf(arr)
         print(*ans)
+        print("~")
 
 # } Driver Code Ends
