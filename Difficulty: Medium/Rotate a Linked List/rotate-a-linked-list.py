@@ -10,30 +10,46 @@ class Node:
 '''
 
 
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-
-
-
-
 class Solution:
-    
+
     #Function to rotate a linked list.
     def rotate(self, head, k):
-        # code here
-        temp=head
-        while(temp.next):
-            temp=temp.next
-        for i in range(k):
-            t=head
-            head=head.next
-            t.next=None
-            temp.next=t
-            temp=temp.next
-        return head
+        # If the linked list is empty or no rotations are needed,
+        # return the original linked list
+        if k == 0 or head is None:
+            return head
 
+        curr = head
+        length = 1
+
+        # Find the length of the linked list
+        while curr.next is not None:
+            curr = curr.next
+            length += 1
+
+        # Modulo k with length of linked list to handle
+        # large values of k
+        k %= length
+
+        if k == 0:
+            curr.next = None
+            return head
+
+        # Make the linked list circular
+        curr.next = head
+
+        # Traverse the linked list to find the kth node
+        curr = head
+        for _ in range(1, k):
+            curr = curr.next
+
+        # Update the (k + 1)th node as the new head
+        newHead = curr.next
+
+        # Break the loop by updating the next pointer
+        # of kth node
+        curr.next = None
+        return newHead
 
 
 #{ 
@@ -83,6 +99,7 @@ if __name__ == "__main__":
         idx += 2
         head = Solution().rotate(head, k)
         printList(head)
+        print("~")
         t -= 1
 
 # } Driver Code Ends
