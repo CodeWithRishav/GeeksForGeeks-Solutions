@@ -2,19 +2,28 @@
 
 
 class Solution:
-    def __init__(self):
-        self.prev=-1
-        
-    def isBST(self,root):
-        if root:
-            if not self.isBST(root.left):
-                return False
-            if root.data<=self.prev:
-                return False
-            self.prev=root.data
-            if not self.isBST(root.right):
-                return False
-        return True
+
+    INT_MAX = 4294967296
+    INT_MIN = -4294967296
+
+    #Function to check whether a Binary Tree is BST or not.
+    def isBST(self, node):
+        return (self.isBSTUtil(node, self.INT_MIN, self.INT_MAX))
+
+    def isBSTUtil(self, node, mini, maxi):
+
+        #an empty tree is BST so we return true.
+        if node is None:
+            return True
+
+        #returning false if this node violates the min/max constraint.
+        if node.data < mini or node.data > maxi:
+            return False
+
+        #otherwise checking the subtrees recursively.
+        #tightening the min or max constraint.
+        return (self.isBSTUtil(node.left, mini, node.data - 1)
+                and self.isBSTUtil(node.right, node.data + 1, maxi))
 
 
 
@@ -101,5 +110,6 @@ if __name__ == "__main__":
             print("true")
         else:
             print("false")
+        print("~")
 
 # } Driver Code Ends
