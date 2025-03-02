@@ -1,24 +1,48 @@
 class Solution:
-    
     #Function to find maximum of each subarray of size k.
-    def max_of_subarrays(self,k,arr):
-        
-        dq = deque()
-        n = len(arr)
+    def maxOfSubarrays(self, arr, k):
+
         res = []
-        
-        for i in range(n):
-            if dq and dq[0] <= i - k:
-                dq.popleft()
-            while dq and arr[dq[-1]] < arr[i]:
-                dq.pop()
-            dq.append(i)
-            if i >= k - 1:
-                res.append(arr[dq[0]])
-        
-        return res#code here
-        
-        #code here
+        d = deque()
+        n = len(arr)
+
+        #iterating over first k elements or first window of array.
+        for i in range(k):
+
+            #for every element, the previously smaller elements
+            #are useless so removing them from deque.
+            while len(d) and arr[i] >= arr[d[-1]]:
+                d.pop()
+
+            #adding new element at back of deque.
+            d.append(i)
+
+        #iterating over the rest of the elements.
+        for i in range(k, n):
+
+            #the element at the front of the deque is the largest
+            #element of previous window, so adding it to the list.
+            res.append(arr[d[0]])
+
+            #removing the elements which are out of this window.
+            while len(d) and d[0] <= i - k:
+                d.popleft()
+
+            #removing all elements smaller than the element being
+            #added currently (removing useless elements).
+            while len(d) and arr[i] >= arr[d[-1]]:
+                d.pop()
+
+            #adding new element at back of deque.
+            d.append(i)
+
+        #the element at the front of the deque is the largest
+        #element of last window, so adding it to the list.
+        res.append(arr[d[0]])
+        d.popleft()
+
+        #returning the list.
+        return res
 
 
 #{ 
@@ -46,12 +70,12 @@ def write():
 if __name__ == '__main__':
     test_cases = int(input())
     for cases in range(test_cases):
-        k = int(input())
         arr = list(map(int, input().strip().split()))
+        k = int(input())
         ob = Solution()
-        res = ob.max_of_subarrays(k, arr)
+        res = ob.maxOfSubarrays(arr, k)
         for i in range(len(res)):
             print(res[i], end=" ")
         print()
-
+        print("~")
 # } Driver Code Ends
