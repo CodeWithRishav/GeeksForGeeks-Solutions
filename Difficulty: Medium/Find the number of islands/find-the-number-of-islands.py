@@ -2,34 +2,40 @@
 
 class Solution:
 
+    # A function to check if a given
+    # cell (r, c) can be included in DFS
+    def isSafe(self, grid, r, c):
+        row = len(grid)
+        col = len(grid[0])
+
+        # r is in range, c is in range, value is 'L' and not visited
+        return (0 <= r < row) and (0 <= c < col) and grid[r][c] == 'L'
+
+    def dfs(self, grid, r, c):
+        # Arrays to get 8 neighbors
+        rNbr = [-1, -1, -1, 0, 0, 1, 1, 1]
+        cNbr = [-1, 0, 1, -1, 1, -1, 0, 1]
+
+        # Mark current cell as visited
+        grid[r][c] = 'W'
+
+        # Recur for all 8 neighbors
+        for k in range(8):
+            newR = r + rNbr[k]
+            newC = c + cNbr[k]
+            if self.isSafe(grid, newR, newC):  # Check before recursion
+                self.dfs(grid, newR, newC)
+
     def numIslands(self, grid):
-        visited = [[0] * len(grid[0]) for _ in range(len(grid))]
-
-        # Function to check if the given coordinates are valid or not.
-        def isValid(x, y):
-            return 0 <= x < len(grid) and 0 <= y < len(grid[0])
-
-        # Depth First Search to explore the connected components (iterative).
-        def dfs(grid, x, y):
-            stack = [(x, y)]
-            while stack:
-                curr_x, curr_y = stack.pop()
-                visited[curr_x][curr_y] = 1
-                # Check all 8 possible directions
-                for i in [[-1, -1], [1, 1], [1, 0], [0, 1], [1, -1], [-1, 1],
-                          [-1, 0], [0, -1]]:
-                    new_x, new_y = curr_x + i[0], curr_y + i[1]
-                    if isValid(new_x, new_y) and not visited[new_x][new_y]:
-                        if grid[new_x][new_y] == 1:
-                            stack.append((new_x, new_y))
+        row = len(grid)
+        col = len(grid[0])
 
         count = 0
-        for i in range(len(grid)):
-            for j in range(len(grid[0])):
-                if visited[i][j] == 0 and grid[i][j] == 1:
-                    dfs(grid, i, j)
-                    count += 1
-
+        for r in range(row):
+            for c in range(col):
+                if grid[r][c] == 'L':  # Found an unvisited land cell
+                    self.dfs(grid, r, c)  # Mark all connected land
+                    count += 1  # Increment island count
         return count
 
 
@@ -38,11 +44,12 @@ class Solution:
 # Driver code
 if __name__ == "__main__":
     for _ in range(int(input())):
-        n, m = map(int, input().strip().split())
-        grid = []
-        for i in range(n):
-            grid.append([int(i) for i in input().strip().split()])
+        n = int(input().strip())
+        m = int(input().strip())
+        grid = [input().strip().split() for _ in range(n)]
+
         obj = Solution()
         print(obj.numIslands(grid))
+        print("~")
 
 # } Driver Code Ends
