@@ -1,0 +1,10 @@
+<h2><a href="https://www.geeksforgeeks.org/problems/maximize-median-after-k-additions/1">Maximize Median After k Additions</a></h2><h3>Difficulty Level : Difficulty: Medium</h3><hr><div class="problems_problem_content__Xm_eO"><p><span style="font-size: 14pt;">Given an array <strong>arr[]</strong> of positive integers and an integer <strong>k</strong>, you are allowed to perform at most k operations. In each operation, you can increment any one element of the array by 1.</span><br><span style="font-size: 14pt;">Your task is to find the <strong>maximum possible median</strong> of the array after performing <strong>at most k</strong> such operations.</span></p>
+<p><span style="font-size: 14pt;"><strong>Note:</strong> The array should be sorted before computing the median. For even-length arrays, consider the median as the floor of the average of the two middle elements.</span></p>
+<p><strong><span style="font-size: 14pt;">Examples:</span></strong></p>
+<pre><span style="font-size: 14pt;"><span style="font-size: 18.6667px;">Input: arr[] = [1, 3, 4, 5], k = 3
+Output: 5
+Explanation: We can add +2 to the second element and +1 to the third element to get the array [1, 5, 5, 5]. After sorting, the array remains [1, 5, 5, 5]. Since the length is even, the median is (5 + 5) / 2 = 5. </span></span></pre>
+<pre><span style="font-size: 14pt;"><span style="font-size: 18.6667px;">Input: arr[] = [1, 3, 6, 4, 2], k = 10
+Output: 7
+Explanation: After applying operations optimally, we can transform the array to [1, 3, 7, 7, 7] (one possible way). Sorted array becomes [1, 3, 7, 7, 7]. Since the length is odd, the median is the middle element 7.<br></span></span></pre>
+<p><strong><span style="font-size: 18.6667px;">Constraints:<br></span></strong><span style="font-size: 18.6667px;">1 ≤ arr.size() ≤ 10<sup>5</sup><br>1 ≤ arr[i], k ≤ 10<sup>8</sup></span></p></div><br><p><span style=font-size:18px><strong>Topic Tags : </strong><br><code>Binary Search</code>&nbsp;<code>Mathematical</code>&nbsp;
