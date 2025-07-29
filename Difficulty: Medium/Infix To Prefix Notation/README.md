@@ -1,0 +1,16 @@
+<h2><a href="https://www.geeksforgeeks.org/problems/infix-to-prefix-notation/1">Infix To Prefix Notation</a></h2><h3>Difficulty Level : Difficulty: Medium</h3><hr><div class="problems_problem_content__Xm_eO"><p><span style="font-size: 14pt;">You are given an infix expression in the form of a string <strong data-start="186" data-end="196">s</strong>, consisting of:</span></p>
+<ul>
+<li><span style="font-size: 14pt;">Lowercase alphabetical&nbsp;<strong data-start="239" data-end="251">operands</strong>&nbsp;(<code data-start="253" data-end="256">a</code>&nbsp;to&nbsp;<code data-start="260" data-end="263">z</code>).</span></li>
+<li><span style="font-size: 14pt;">Standard arithmetic&nbsp;<strong data-start="288" data-end="301">operators</strong>:&nbsp;<code data-start="303" data-end="306">+</code>,&nbsp;<code data-start="308" data-end="311">-</code>,&nbsp;<code data-start="313" data-end="316">*</code>,&nbsp;<code data-start="318" data-end="321">/</code>,&nbsp;<code data-start="323" data-end="326">^</code>.</span></li>
+<li><span style="font-size: 14pt;">Optional&nbsp;<strong data-start="339" data-end="354">parentheses</strong>&nbsp;for grouping.</span></li>
+</ul>
+<p><span style="font-size: 14pt;"> </span></p>
+<p><span style="font-size: 14pt;"> </span></p>
+<p data-start="370" data-end="492"><span style="font-size: 14pt;">Your task is to <strong data-start="386" data-end="397">convert</strong> this infix expression into its equivalent <strong data-start="440" data-end="461">prefix expression</strong> and return it as a <strong data-start="481" data-end="491">string</strong>.</span></p>
+<p><span style="font-size: 14pt;"><strong data-start="269" data-end="327">Examples:</strong></span></p>
+<pre><span style="font-size: 14pt;"><strong data-start="269" data-end="327">Input: </strong>s<strong data-start="269" data-end="327"> </strong>=<strong data-start="269" data-end="327"> </strong>"a*b+c/d"<strong data-start="269" data-end="327"><br>Output: </strong>+*ab/cd&nbsp;<strong data-start="269" data-end="327"><br>Explaination: </strong>In prefix notation, operators come before their operands a*b → *ab, c/d → /cd
+Since * and / have higher precedence than +, we evaluate them first, then apply +, So the final prefix expression is: +*ab/cd</span></pre>
+<pre><span style="font-size: 14pt;"><strong>Input: </strong>s = "(a-b/c)*(a/k-l)"<br><strong>Output:</strong>&nbsp;*-a/bc-/akl<br><strong>Explaination: </strong><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Convert inner divisions first : b/c → /bc , a/k → /ak<br></span>Handle subtractions next: <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">a-b/c → -a/bc, </span><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">a/k-l → -/akl</span>
+Finally, apply multiplication:
+(a-b/c) * (a/k-l) → *-a/bc-/akl</span></pre>
+<p><span style="font-size: 14pt;"><strong>Constraints:<br></strong>1 ≤ s.size() ≤ 10<sup>5</sup></span></p></div>
