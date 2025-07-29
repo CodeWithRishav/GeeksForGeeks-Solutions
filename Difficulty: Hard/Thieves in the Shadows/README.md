@@ -1,0 +1,22 @@
+<h2><a href="https://www.geeksforgeeks.org/problems/thieves-in-the-shadows/1">Thieves in the Shadows</a></h2><h3>Difficulty Level : Difficulty: Hard</h3><hr><div class="problems_problem_content__Xm_eO"><p><span style="font-size: 14pt;">In a town plagued by thieves, the mayor has a list of <strong>n</strong> thieves that are scheduled to be caught, numbered <strong>1</strong> through <strong>n.</strong> Each thief:</span></p>
+<ul>
+<li><span style="font-size: 14pt;">Has a threat level <strong>a<sub>i</sub></strong> (positive integer), and</span></li>
+<li><span style="font-size: 14pt;">Belongs to a specific gang type <strong>b? </strong>(an integer between <strong>1</strong> and <strong>m</strong> inclusive).</span></li>
+</ul>
+<p><span style="font-size: 14pt;">To aid in the operation, the mayor can assign up to <strong>m</strong> <strong>special guards</strong>, <strong>one per gang</strong>. The guard of gang type <strong>j</strong> can neutralize all threats from that gang's thieves.<br></span><span style="font-size: 14pt;">The mayor begins the operation with a total preparedness level <strong>h</strong> (his ability to endure threats without failing the mission). The plan is carried out in order from thief <strong>1</strong> to thief <strong>n</strong>, following these steps:<br></span><span style="font-size: 14pt;">For each thief <strong>i = 1 to n</strong>, as long as preparedness is positive:<br></span><span style="font-size: 14pt;">If no guard is assigned for the gang <strong>b?</strong>:</span></p>
+<ul>
+<li><span style="font-size: 14pt;">The thief deals <strong>a?</strong> threat to the mayor (subtract <strong>a?</strong> from <strong>h</strong>).</span></li>
+</ul>
+<p><span style="font-size: 14pt;">If after that, h &gt; 0:</span></p>
+<ul>
+<li><span style="font-size: 14pt;">The thief is captured.</span></li>
+</ul>
+<p><span style="font-size: 14pt;">Otherwise:</span></p>
+<ul>
+<li><span style="font-size: 14pt;">The mayor fails, and no more thieves can be dealt with.</span></li>
+</ul>
+<p><span style="font-size: 14pt;">You are to solve the following task for every possible number of guards <strong>k= 0, 1, …, m:</strong><br></span><span style="font-size: 14pt;">Determine the maximum number of thieves that the mayor can successfully capture when he assigns exactly <strong>k</strong> guards (choosing them from the available <strong>m</strong> gang types).</span></p>
+<p><strong><span style="font-size: 14pt;">Examples:</span></strong></p>
+<pre><strong><span style="font-size: 14pt;">Input:</span></strong><span style="font-size: 14pt;"> n = 5, m = 2, h = 13.<br>       a[] = [10, 10, 6, 9, 3]<br>       b[] = [2, 1, 2, 2, 1]</span><strong><span style="font-size: 14pt;"><br>Output: </span></strong><span style="font-size: 14pt;">[1, 4, 5]</span><strong><span style="font-size: 14pt;"><br>Explanation: </span></strong><span style="font-size: 18.6667px;">For k = 0, no guards are deployed. The first thief reduce the mayor’s health to 3, but the second thief  drops it below zero. So only 1 thief is captured.<br>For k = 1, choosing the gang 2 to guard allows capturing 4 thieves before health runs out.<br>For k = 2, choosing two optimal gangs 2, 1 avoids most damage, allowing 5 captures.</span></pre>
+<pre><strong><span style="font-size: 14pt;">Input: </span></strong><span style="font-size: 14pt;">n = 3, m = 1, h = 4.</span><strong><span style="font-size: 14pt;"><br>      </span></strong><span style="font-size: 14pt;"> a[] = [1, 1, 2]<br>       b[] = [1, 1, 1]</span><strong><span style="font-size: 14pt;"><br>Output: </span></strong><span style="font-size: 14pt;">[2, 3]</span><strong><span style="font-size: 14pt;"><br>Explanation: </span></strong><span style="font-size: 14pt;">it can be seen that 2 thieves can be captured when k = 0, 3 when k = 1.</span><strong><span style="font-size: 14pt;"><br></span></strong></pre>
+<p><strong><span style="font-size: 14pt;"><span style="font-size: 14pt;">Constraints:</span><br></span></strong><span style="font-size: 14pt;"><span style="font-size: 14pt;">1 ≤ m ≤ n ≤ 10</span></span><span style="font-size: 14pt;"><sup style="font-size: 14pt;">5&nbsp;<br></sup><span style="font-size: 14pt;"><span style="font-size: 14pt;">1 ≤ h ≤ 10<sup>7</sup></span><sup style="font-size: 14pt;"><br></sup><span style="font-size: 14pt;">1 ≤ a<sub>i </sub>≤ 10<sup>6</sup><sup><br><span style="font-size: 14pt;">1 ≤ b<sub>i</sub> ≤ m<br>for each 1 ≤ i ≤ m, there is 1 ≤ j ≤ n, such that b<sub>j</sub> = i.</span></sup></span></span></span></p></div>
